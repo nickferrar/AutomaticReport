@@ -82,15 +82,15 @@ incidentByType.reset_index(inplace=True)
 
 smtp_server = 'smtp.gmail.com'
 port = 587 
-sender_email = 'autoreportferrari@gmail.com'
-# password = 'iurzutrxbrxxlesb'
+sender_email = config.sender_eml
+
 receiver_email = 'nickferrar@gmail.com'
    
 message = f'''From: Automatic Nick <autoreportferrari@gmail.com>
 To: Nick Ferrari nickferrar@gmail.com>
 Subject: Hourly Service Report
 
-TotalNumber of Active Orders : {numActive}
+Total Number of Active Orders : {numActive}
 Number of Active New Orders in Last Hour: {numNewActive}
 Top 5 Longest Active Orders by Incident ID: {longestActive.values}
 Highest Total Duration of Incidents by Customer {customerInfo.iat[0,0], customerInfo.iat[0,1]}
